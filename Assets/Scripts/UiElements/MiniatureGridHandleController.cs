@@ -8,7 +8,7 @@ namespace UiElements
     {
         [SerializeField] private float _dragSpeed = 3f;
         [SerializeField] private float _adjustTime = 0.4f;
-        [SerializeField] private float _thresholdPercentage = 30f;
+        [SerializeField] private float _threshold = 0.3f;
         [SerializeField] private RectTransform _miniatureGridRectTransform;
         private Vector2 _boundaries;
         private bool _isHidden = false;
@@ -35,7 +35,7 @@ namespace UiElements
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            float threshold = _miniatureGridRectTransform.sizeDelta.y * _thresholdPercentage/100;
+            float threshold = _miniatureGridRectTransform.rect.size.y * _threshold;
             bool hideMiniatureGrid;
 
             if (_isHidden)
