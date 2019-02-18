@@ -51,7 +51,7 @@ namespace UiElements
                         _webCamTexture.Play();
                         
 #if UNITY_ANDROID && !UNITY_EDITOR
-                        additionalRotationAngle = 180f;
+                        float additionalRotationAngle = 180f;
 #else
                         float additionalRotationAngle = 0f;
 #endif                        
